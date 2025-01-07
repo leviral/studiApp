@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:studiapp/pages/home_page.dart';
+import 'package:studyapp/pages/dashboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         appBarTheme: AppBarTheme(color: Colors.white),
       ),
-      home: HomePage(),
+      home: Dashboard(),
     );
   }
 }

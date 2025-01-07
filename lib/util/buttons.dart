@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:studiapp/components/time_convert.dart';
 
 import '../components/buttons_template.dart';
+import '../components/time_convert.dart';
 
 class Buttons extends StatefulWidget {
   const Buttons({super.key});

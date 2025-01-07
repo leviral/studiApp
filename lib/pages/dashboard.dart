@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:studiapp/util/buttons.dart';
-import 'package:studiapp/util/nav_bar.dart';
+import '../util/buttons.dart';
 import '../util/cafeteria.dart';
 import '../util/calendar.dart';
+import '../util/nav_bar.dart';
 import '../util/report.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Dashboard extends StatefulWidget {
+  const Dashboard({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Dashboard> createState() => _DashboardState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

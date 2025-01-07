@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:studiapp/components/nav_bar_items.dart';
+import '../components/nav_bar_items.dart';
 
 class NavBar extends StatelessWidget {
   List navBarItems = [
