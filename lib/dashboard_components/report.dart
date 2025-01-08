@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Report extends StatelessWidget {
-  const Report({super.key});
+
+  void Function()? onPressed;
+  Report({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class Report extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () => onPressed,
                 icon: Icon(Icons.close),
                 color: Colors.white,
               ),

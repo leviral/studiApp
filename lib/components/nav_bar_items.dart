@@ -4,12 +4,14 @@ class NavBarItems extends StatelessWidget {
   final dynamic iconOrImage;
   final String description;
   final bool colorSwitch;
+  final Widget pageName;
 
   const NavBarItems(
       {super.key,
       required this.iconOrImage,
       required this.description,
-      required this.colorSwitch});
+      required this.colorSwitch,
+      required this.pageName});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,8 @@ class NavBarItems extends StatelessWidget {
             child: iconOrImage is IconData
                 ? IconButton(
                     padding: EdgeInsets.zero,
-                    onPressed: () {},
+                    onPressed: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => pageName)),
                     icon: Icon(iconOrImage),
                     iconSize: 24,
                     splashColor: Colors.transparent,
@@ -34,7 +37,8 @@ class NavBarItems extends StatelessWidget {
                         : Color.fromRGBO(6, 2, 102, 1),
                   )
                 : GestureDetector(
-                    onTap: () {},
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => pageName)),
                     child: Image.asset(
                       iconOrImage,
                       color: colorSwitch

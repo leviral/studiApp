@@ -1,40 +1,37 @@
 import 'package:flutter/material.dart';
-import '../util/buttons.dart';
-import '../util/cafeteria.dart';
-import '../util/calendar.dart';
+import '../util/app_bar.dart';
+import '../dashboard_components/buttons.dart';
+import '../dashboard_components/cafeteria.dart';
+import '../dashboard_components/calendar.dart';
 import '../util/nav_bar.dart';
-import '../util/report.dart';
+import '../dashboard_components/report.dart';
 
-class Dashboard extends StatefulWidget {
-  const Dashboard({super.key});
+class DashboardPage extends StatefulWidget {
+  const DashboardPage({super.key});
 
   @override
-  State<Dashboard> createState() => _DashboardState();
+  State<DashboardPage> createState() => _DashboardPageState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _DashboardPageState extends State<DashboardPage> {
+  bool _isVisible = true;
+
+  void closeReport() {
+    setState(() {
+      _isVisible = !_isVisible;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromRGBO(6, 2, 102, 0.5),
-        appBar: AppBar(
-          title: Text("Study-App"),
-          centerTitle: true,
-          elevation: 0,
-          leading: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.menu_outlined),
-          ),
-          actions: [
-            IconButton(
-                onPressed: () {}, icon: Icon(Icons.account_circle_outlined))
-          ],
-        ),
+        appBar: AppBarBuilder.build(title: "Dashboard"),
         body: Padding(
           padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
           child: Column(
             children: [
-              Expanded(flex: 1, child: Report()),
+              if (_isVisible)
+                Expanded(flex: 1, child: Report(onPressed: closeReport)),
               Expanded(flex: 1, child: Buttons()),
               Expanded(flex: 1, child: Cafeteria()),
               Calendar(),

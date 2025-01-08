@@ -11,30 +11,12 @@ class Calendar extends StatefulWidget {
 
 class _CalendarState extends State<Calendar> {
   List<dynamic> defaultEntries = [
-    [
-      "assets/icons/fountain-pen.png",
-      "7:30",
-      "EMI Ü",
-      "APB E040",
-      Color.fromRGBO(6, 2, 102, 1)
-    ],
-    ["assets/icons/sun.png", "9:20", "frei", null, Colors.grey[700]],
-    [
-      "assets/icons/book.png",
-      "11:10",
-      "EMI VL",
-      "HSZ 03",
-      Color.fromRGBO(6, 2, 102, 1)
-    ],
-    ["assets/icons/coffee.png", "13:00", "Mensa", null, Colors.green],
-    [
-      "assets/icons/fountain-pen.png",
-      "14:50",
-      "AUD Ü",
-      "APB E001",
-      Color.fromRGBO(6, 2, 102, 1)
-    ],
-    ["assets/icons/sun.png", "16:20", "frei", null, Colors.grey[700]]
+    ["assets/icons/fountain-pen.png", "7:30", "EMI Ü", "APB E040", "Ü"],
+    ["assets/icons/sun.png", "9:20", "frei", null, "frei"],
+    ["assets/icons/book.png", "11:10", "EMI VL", "HSZ 03", "VL"],
+    ["assets/icons/coffee.png", "13:00", "Mensa", null, "Mensa"],
+    ["assets/icons/fountain-pen.png", "14:50", "AUD Ü", "APB E001", "Ü"],
+    ["assets/icons/sun.png", "16:20", "frei", null, "Ü"]
   ];
 
   @override
@@ -87,8 +69,7 @@ class _CalendarState extends State<Calendar> {
                         crossAxisCount: 3,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10),
-                    padding:
-                        EdgeInsets.only(left: 40, right: 40),
+                    padding: EdgeInsets.only(left: 40, right: 40),
                     itemCount: defaultEntries.length,
                     itemBuilder: (context, index) {
                       return TemplateCalendar(
@@ -96,7 +77,7 @@ class _CalendarState extends State<Calendar> {
                           time: defaultEntries[index][1],
                           appointment: defaultEntries[index][2],
                           room: defaultEntries[index][3],
-                          color: defaultEntries[index][4]);
+                          typeAppointment: defaultEntries[index][4]);
                     }),
               ),
             )
