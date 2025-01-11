@@ -13,6 +13,7 @@ class Buttons extends StatefulWidget {
 }
 
 class _ButtonsState extends State<Buttons> {
+  TimeConvert timeConvert = TimeConvert();
   String currentDate = '';
   late Timer _timer;
 
@@ -29,7 +30,7 @@ class _ButtonsState extends State<Buttons> {
     // Initialisiere den Timer, um das Datum jede Sekunde zu aktualisieren
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
-        currentDate = TimeConvert().convertTime;
+        currentDate = timeConvert.convertTimeDashboard();
       });
     });
   }

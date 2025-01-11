@@ -14,8 +14,10 @@ class _FavoritesPageState extends State<FavoritesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarBuilder.build(title: "Favoriten"),
-        bottomNavigationBar: NavBar(indexPage: 4)
-    );
+        appBar: AppBarBuilder.build(title: "Favoriten"),
+        body: Center(
+            child: Text("In Entwicklung",
+                style: TextStyle(color: Colors.white, fontSize: 20))),
+        bottomNavigationBar: NavBar(indexPage: 4));
   }
 }

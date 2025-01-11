@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:studyapp/util/data.dart';
 
 class TemplateCalendar extends StatelessWidget {
+  Data data = Data();
   final dynamic iconOrImage;
   final String time;
   final String appointment;
   final String? room;
   final String typeAppointment;
 
-  const TemplateCalendar(
+  TemplateCalendar(
       {super.key,
       required this.iconOrImage,
       required this.time,

@@ -15,6 +15,7 @@ class _ToDoPageState extends State<ToDoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarBuilder.build(title: "ToDo's"),
+        body: Center(child: Text("In Entwicklung", style: TextStyle(color: Colors.white, fontSize: 20))),
         bottomNavigationBar: NavBar(indexPage: 3)
     );
   }

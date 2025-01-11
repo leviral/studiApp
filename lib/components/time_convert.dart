@@ -23,11 +23,17 @@ class TimeConvert {
     "Dezember"
   ];
 
-  String get convertTime {
+  String convertTimeDashboard() {
     DateTime time = DateTime.now();
-    String currentDate =
+    String formatDate =
         "${weekdays[time.weekday - 1]}, ${time.day}. ${months[time.month - 1]}";
-    return currentDate;
+    return formatDate;
+  }
+
+  String convertDaysMonths () {
+    DateTime time = DateTime.now();
+    String formatDate = "${time.day.toString().padLeft(2, "0")}.${time.month.toString().padLeft(2, "0")}";
+    return formatDate;
   }
 
 }
