@@ -19,10 +19,12 @@ class TemplateCalendar extends StatelessWidget {
 
   Color? colorAppointment() {
     try {
-      if (typeAppointment == "VL" || typeAppointment == "Ü") {
+      if (typeAppointment == "VL") {
         return Color.fromRGBO(6, 2, 102, 1);
+      } else if (typeAppointment == "Ü") {
+        return Colors.teal;
       } else if (typeAppointment == "Mensa") {
-        return Colors.green;
+        return Colors.green[400];
       } else if (typeAppointment == "frei") {
         return Colors.grey[700];
       }
